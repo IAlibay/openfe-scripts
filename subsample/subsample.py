@@ -79,10 +79,6 @@ def get_free_energy_at_time(reporter, analyzer, time="1 ns", timestep="4 fs"):
 def _get_files(storage: pathlib.Path, checkpoint=pathlib.Path):
     """
     Get the absolute storage path and the checkpoint path relative to it.
-
-    Parameters
-    ----------
-
     """
     if not storage.is_file():
         storage = storage.relative_to(storage.parts[0])
