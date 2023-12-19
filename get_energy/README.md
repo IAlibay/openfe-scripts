@@ -17,6 +17,17 @@ Options:
   --help             Show this message and exit.
 
 
+### Example use
+
+`python get_energy.py --simulation simulation.nc --checkpoint checkpoint.nc --time "500 ps" --timestep "4 fs"`
+
+### Example output
+
+```
+DG: 4.11 kcal/mol, MBAR error: 0.22 kcal/mol
+```
+
+
 ## Notes
 
 N/A
