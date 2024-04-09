@@ -17,7 +17,11 @@ with open(sys.argv[1]) as stream:
 systemA = gufe.Component.from_dict(r['stateA'])
 systemB = gufe.Component.from_dict(r['stateB'])
 protocol = gufe.protocols.Protocol.from_dict(r['protocol'])
-mapping = gufe.LigandAtomMapping.from_dict(r['mapping'])
+
+if r['mapping'] is not None:
+    mapping = gufe.LigandAtomMapping.from_dict(r['mapping'])
+else:
+    mapping = None
 
 print(systemA)
 print(systemB)
@@ -37,4 +41,5 @@ for comp in systemB.components.values():
     if comp not in systemA.components.values():
         write_sdf(comp)
 
-mapping.draw_to_file('mapping.png')
+if mapping is not None:
+    mapping.draw_to_file('mapping.png')
